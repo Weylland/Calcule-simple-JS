@@ -1,3 +1,5 @@
+// Regexp
+var reg = /^[0-9.]*$/g;
 //Addition
 var bouttonAdd = document.getElementById('add');
 bouttonAdd.addEventListener('click', additionner);
@@ -8,6 +10,9 @@ function additionner(){
     var spAdd = document.getElementById('repAdd');
 
     if( nb1 == '' || nb2 == '' ){
+        spAdd.innerHTML = 'Entrez des chiffres !';
+    }
+    else if (!reg.test(nb1) && !reg.test(nb2)){
         spAdd.innerHTML = 'Entrez des chiffres !';
     }
     else{
